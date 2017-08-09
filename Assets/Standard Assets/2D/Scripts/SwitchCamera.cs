@@ -11,7 +11,6 @@ public class SwitchCamera : MonoBehaviour
     void Update()
     {
         center = ((Capsule2.position - Capsule1.position) / 2.0f) + Capsule1.position;
-        center.y = center.y - 0;
         transform.position = center;
     }
 }
