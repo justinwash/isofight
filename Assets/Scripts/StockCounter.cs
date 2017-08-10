@@ -6,9 +6,9 @@ using UnityEngine.Experimental.UIElements;
 public class StockCounter : MonoBehaviour
 {
     public int startingStocks = 6;
-    public int oldStockCount;
+    int oldStockCount;
     public int newStockCount;
-    public Rigidbody pleaseStop;
+    Rigidbody pleaseStop;
     Vector3 respawnPosition;
     Quaternion respawnRotation;
     public bool isDead;
