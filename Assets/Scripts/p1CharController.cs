@@ -17,7 +17,7 @@ public class p1CharController : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKey) // only execute if a key is being pressed
+        if (Input.GetButton("p1HorizontalKey") || Input.GetButton("p1VerticalKey")) // only execute if a key is being pressed
         {
             Move();
             GetComponentInChildren<Animator>().SetTrigger("IsWalking");
