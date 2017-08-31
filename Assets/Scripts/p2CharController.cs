@@ -6,8 +6,9 @@ public class p2CharController : MonoBehaviour
     [SerializeField]
     float moveSpeed = 4f; //Change in inspector to adjust move speed
     Vector3 forward, right; // Keeps track of our relative forward and right vectors
+    bool canMove = true; // tell the character if its allowed to waltz about all willy nilly
 
-    void Start()
+	void Start()
     {
         forward = Camera.main.transform.forward; // Set forward to equal the camera's forward vector
         forward.y = 0; // make sure y is 0
@@ -19,10 +20,20 @@ public class p2CharController : MonoBehaviour
     {
         if (Input.GetButton("p2HorizontalKey") || Input.GetButton("p2VerticalKey")) // only execute if a key is being pressed
         {
-            Move();
-            GetComponentInChildren<Animator>().SetTrigger("IsWalking");
+			if (canMove == true)
+			{
+				Move();
+				GetComponentInChildren<Animator>().SetTrigger("IsWalking");
+			}
         }
         else GetComponentInChildren<Animator>().ResetTrigger("IsWalking");
+
+		// Punch1 if Punch1 is pressed
+		if (Input.GetButton("p2Punch1Key")) // Punch1 if Punch1 is pressed
+		{
+			canMove = false;
+			GetComponentInChildren<Animator>().SetTrigger("Punch1");
+		}
     }
 
     void Move()
@@ -35,4 +46,10 @@ public class p2CharController : MonoBehaviour
         transform.position += rightMovement; // move our transform's position right/left
         transform.position += upMovement; // Move our transform's position up/down
     }
+
+	public void Punch1Finished()
+	{
+		canMove = true;
+		GetComponentInChildren<Animator>().ResetTrigger("Punch1");
+	}
 }

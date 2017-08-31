@@ -6,6 +6,7 @@ public class p1CharController : MonoBehaviour
     [SerializeField]
     float moveSpeed = 4f; //Change in inspector to adjust move speed
     Vector3 forward, right; // Keeps track of our relative forward and right vectors
+    bool canMove = true; // tell the character if its allowed to waltz about all willy nilly
 
     void Start()
     {
@@ -17,17 +18,29 @@ public class p1CharController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("p1HorizontalKey") || Input.GetButton("p1VerticalKey")) // only execute if a key is being pressed
+
+        // move if we press a movement button
+        if (Input.GetButton("p1HorizontalKey") || Input.GetButton("p1VerticalKey")) 
         {
-            Move();
-            GetComponentInChildren<Animator>().SetTrigger("IsWalking");
+            if (canMove == true)
+            {
+                Move();
+                GetComponentInChildren<Animator>().SetTrigger("IsWalking");
+            }
         }
         else GetComponentInChildren<Animator>().ResetTrigger("IsWalking");
 
+		// Punch1 if Punch1 is pressed
+		if (Input.GetButton("p1Punch1Key")) // Punch1 if Punch1 is pressed
+		{
+            canMove = false;
+            GetComponentInChildren<Animator>().SetTrigger("Punch1");
+		}
     }
 
     void Move()
     {
+        
         Vector3 direction = new Vector3(Input.GetAxis("p1HorizontalKey"), 0, Input.GetAxis("p1VerticalKey")); // setup a direction Vector based on keyboard input. GetAxis returns a value between -1.0 and 1.0. If the A key is pressed, GetAxis(HorizontalKey) will return -1.0. If D is pressed, it will return 1.0
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("p1HorizontalKey"); // Our right movement is based on the right vector, movement speed, and our GetAxis command. We multiply by Time.deltaTime to make the movement smooth.
         Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("p1VerticalKey"); // Up movement uses the forward vector, movement speed, and the vertical axis inputs.
@@ -35,5 +48,11 @@ public class p1CharController : MonoBehaviour
         //transform.forward = heading; // Sets forward direction of our game object to whatever direction we're moving in
         transform.position += rightMovement; // move our transform's position right/left
         transform.position += upMovement; // Move our transform's position up/down
+    }
+
+    public void Punch1Finished()
+    {
+        canMove = true;
+        GetComponentInChildren<Animator>().ResetTrigger("Punch1");
     }
 }
