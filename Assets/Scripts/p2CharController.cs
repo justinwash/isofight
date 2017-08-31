@@ -29,7 +29,7 @@ public class p2CharController : MonoBehaviour
         else GetComponentInChildren<Animator>().ResetTrigger("IsWalking");
 
 		// Punch1 if Punch1 is pressed
-		if (Input.GetButton("p2Punch1Key")) // Punch1 if Punch1 is pressed
+		if (Input.GetButton("p2Punch1")) // Punch1 if Punch1 is pressed
 		{
 			canMove = false;
 			GetComponentInChildren<Animator>().SetTrigger("Punch1");

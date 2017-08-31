@@ -7,6 +7,7 @@ public class p1CharController : MonoBehaviour
     float moveSpeed = 4f; //Change in inspector to adjust move speed
     Vector3 forward, right; // Keeps track of our relative forward and right vectors
     bool canMove = true; // tell the character if its allowed to waltz about all willy nilly
+    bool canAttack = true;
 
     void Start()
     {
@@ -31,10 +32,9 @@ public class p1CharController : MonoBehaviour
         else GetComponentInChildren<Animator>().ResetTrigger("IsWalking");
 
 		// Punch1 if Punch1 is pressed
-		if (Input.GetButton("p1Punch1Key")) // Punch1 if Punch1 is pressed
+		if (Input.GetButton("p1Punch1") && canAttack == true) // Punch1 if Punch1 is pressed and we're allowed to
 		{
-            canMove = false;
-            GetComponentInChildren<Animator>().SetTrigger("Punch1");
+            Punch1();
 		}
     }
 
@@ -50,9 +50,17 @@ public class p1CharController : MonoBehaviour
         transform.position += upMovement; // Move our transform's position up/down
     }
 
+    void Punch1()
+    {
+        canMove = false;
+        GetComponentInChildren<Animator>().SetTrigger("Punch1");
+        canAttack = false;
+    }
+
     public void Punch1Finished()
     {
         canMove = true;
         GetComponentInChildren<Animator>().ResetTrigger("Punch1");
+        canAttack = true;
     }
 }
