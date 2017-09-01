@@ -57,10 +57,19 @@ public class p1CharController : MonoBehaviour
         canAttack = false;
     }
 
-    public void Punch1Finished()
+    public void Punch1Done()
+    {
+        GetComponentInChildren<Animator>().ResetTrigger("Punch1");
+    }
+
+    public void ActionReset()
     {
         canMove = true;
-        GetComponentInChildren<Animator>().ResetTrigger("Punch1");
         canAttack = true;
+    }
+
+    public void AttackDisable()
+    {
+        canAttack = false;
     }
 }
