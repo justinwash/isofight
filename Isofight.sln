@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isofight", "Isofight.csproj", "{C44EDB4E-8212-FA35-64CA-35CDA1D46744}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isofight.Plugins", "Isofight.Plugins.csproj", "{33B8766A-350B-90B3-BD0D-2809E4C01843}"

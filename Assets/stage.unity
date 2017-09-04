@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657934, g: 0.4964136, b: 0.5748189, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -179,8 +179,8 @@ GameObject:
   - component: {fileID: 356552425}
   - component: {fileID: 356552423}
   - component: {fileID: 356552421}
-  - component: {fileID: 356552420}
   - component: {fileID: 356552428}
+  - component: {fileID: 356552420}
   - component: {fileID: 356552427}
   - component: {fileID: 356552426}
   - component: {fileID: 356552424}
@@ -339,11 +339,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 356552419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686134bb47f5df44091920d1820605eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 19a77c4ee1a2fd845ab9fc8061f6e9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
+  characterHealth: 0
+  characterSpeed: 0
+  characterSprite: {fileID: 0}
 --- !u!114 &356552429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 546235590}
   - component: {fileID: 546235591}
+  - component: {fileID: 546235592}
   m_Layer: 0
   m_Name: P1_Hurtbox
   m_TagString: Untagged
@@ -470,6 +472,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.5, z: 0.15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &546235592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546235589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686134bb47f5df44091920d1820605eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  isDead: 0
 --- !u!1 &744711497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1023,6 @@ GameObject:
   - component: {fileID: 1458307266}
   - component: {fileID: 1458307265}
   - component: {fileID: 1458307264}
-  - component: {fileID: 1458307272}
   - component: {fileID: 1458307271}
   - component: {fileID: 1458307270}
   - component: {fileID: 1458307268}
@@ -1158,19 +1173,6 @@ MonoBehaviour:
   startingStocks: 6
   newStockCount: 0
   isDead: 0
---- !u!114 &1458307272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1458307263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686134bb47f5df44091920d1820605eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
 --- !u!114 &1458307273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,6 +1420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925362110}
   - component: {fileID: 1925362111}
+  - component: {fileID: 1925362112}
   m_Layer: 0
   m_Name: P2_Hurtbox
   m_TagString: Untagged
@@ -1445,11 +1448,25 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1925362109}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.5, z: 0.15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1925362112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925362109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686134bb47f5df44091920d1820605eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  isDead: 0
 --- !u!1 &1954379224
 GameObject:
   m_ObjectHideFlags: 0

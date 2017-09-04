@@ -5,11 +5,12 @@ using UnityEngine.Experimental.UIElements;
 
 public class HealthCounter : MonoBehaviour
 {
+    
     public int startingHealth = 100;
     public int currentHealth;
     public Slider healthSlider;
     bool hitbyopponent;
-    bool isDead;
+    public bool isDead;
 
     // Use this for initialization
     void Start()
@@ -20,29 +21,19 @@ public class HealthCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hitbyopponent)
+        if (currentHealth <= 0)
         {
-            //hit effect etc maybe
+            // KAYYYYY OHHHHHH
+            isDead = true;
         }
-
-        hitbyopponent = false;
     }
-
+    
     public void TakeDamage(int amount)
     {
         hitbyopponent = true;
         currentHealth -= amount;
         healthSlider.value = currentHealth;
 
-        if(currentHealth <= 0 && !isDead)
-        {
-            // KAYYYYY OHHHHHH
-            Death();
-        }
     }
-    void Death()
-    {
-        // Set the death flag, eventually have charlie yell something dumb about Cammy
-        isDead = true;
-    }
+    
 }
