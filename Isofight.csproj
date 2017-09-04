@@ -119,6 +119,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\HitboxManager.cs" />
     <Compile Include="Assets\Punch.cs" />
     <Compile Include="Assets\Scripts\CharController.cs" />
     <Compile Include="Assets\Scripts\HealthCounter.cs" />

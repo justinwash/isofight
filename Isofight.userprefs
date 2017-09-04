@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{C44EDB4E-8212-FA35-64CA-35CDA1D46744}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/p2CharController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HitboxManager.cs">
     <Files>
       <File FileName="Assets/Scripts/p1CharController.cs" Line="60" Column="11" />
       <File FileName="Assets/Scripts/p2CharController.cs" Line="4" Column="16" />
+      <File FileName="Assets/HitboxManager.cs" Line="18" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
