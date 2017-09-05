@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 356552420}
   - component: {fileID: 356552424}
   - component: {fileID: 356552422}
-  - component: {fileID: 356552429}
   - component: {fileID: 356552427}
   m_Layer: 0
   m_Name: Player 1
@@ -354,17 +353,6 @@ MonoBehaviour:
   kick1Key: 
   kick2Key: 
   superKey: 
---- !u!114 &356552429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 356552419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dacb0bf722d440d5aac2ee9cc1ff9df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &508839080
 GameObject:
   m_ObjectHideFlags: 0

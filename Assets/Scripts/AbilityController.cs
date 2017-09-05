@@ -21,6 +21,7 @@ public class AbilityController : MonoBehaviour {
         {
             currentMove = characterName + "Punch1";
 
+            GameObject.FindWithTag("Red").GetComponent<RedPunch1>().Punch1();
 
 
         }
