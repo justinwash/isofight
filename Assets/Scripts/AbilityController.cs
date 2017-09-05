@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class AbilityController : MonoBehaviour {
 
-    string characterName;
-    GameObject moveDatabase;
+    public string characterName;
     string currentMove;
 
 	// Use this for initialization
 	void Start ()
     {
-        characterName = GetComponent<CharacterInfo>().characterName;
-        moveDatabase = GameObject.FindGameObjectWithTag("Move Database");
+        
     }
 	
 	// Update is called once per frame
@@ -22,9 +20,14 @@ public class AbilityController : MonoBehaviour {
         if(Input.GetButton(GetComponent<PlayerInfo>().punch1Key))
         {
             currentMove = characterName + "Punch1";
-            moveDatabase.GetComponent(currentMove);
+
 
 
         }
 	}
+
+    public void SetName()
+    {
+        characterName = GetComponent<CharacterInfoCollector>().characterName;
+    }
 }

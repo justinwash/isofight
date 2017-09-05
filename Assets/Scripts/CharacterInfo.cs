@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterInfo : MonoBehaviour {
-
+public class CharacterInfo : MonoBehaviour 
+{
     public string characterName;
     public int characterHealth;
     public float characterSpeed;

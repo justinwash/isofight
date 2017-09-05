@@ -14,7 +14,6 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         playerNumber = this.GetComponent<PlayerInfo>().playerNumber;
-        moveSpeed = this.GetComponent<CharacterInfo>().characterSpeed;
 
         forward = Camera.main.transform.forward; // Set forward to equal the camera's forward vector
         forward.y = 0; // make sure y is 0
@@ -55,5 +54,10 @@ public class MovementController : MonoBehaviour
     public void SetCannotMove()
     {
         canMove = false;
+    }
+
+    public void SetMovementSpeed()
+    {
+        moveSpeed = this.GetComponent<CharacterInfoCollector>().characterSpeed;
     }
 }
