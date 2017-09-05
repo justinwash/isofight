@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CharacterInfo : MonoBehaviour {
 
+    public string characterName;
     public int characterHealth;
-    public int characterSpeed;
+    public float characterSpeed;
+    public int characterStocks;
     public Sprite characterSprite;
     public ArrayList characterMoves;
 
