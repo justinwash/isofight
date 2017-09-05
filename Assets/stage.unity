@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657934, g: 0.4964136, b: 0.5748189, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -180,9 +180,9 @@ GameObject:
   - component: {fileID: 356552423}
   - component: {fileID: 356552421}
   - component: {fileID: 356552428}
+  - component: {fileID: 356552426}
   - component: {fileID: 356552420}
   - component: {fileID: 356552427}
-  - component: {fileID: 356552426}
   - component: {fileID: 356552424}
   - component: {fileID: 356552422}
   - component: {fileID: 356552429}
@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 100
+  forward: {x: 0, y: 0, z: 0}
+  right: {x: 0, y: 0, z: 0}
 --- !u!54 &356552421
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -314,9 +316,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 356552419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1de71f6c383a307428b8bf7eba36c6c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 19a77c4ee1a2fd845ab9fc8061f6e9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterHealth: 0
+  characterSpeed: 0
+  characterSprite: {fileID: 0}
 --- !u!114 &356552427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,12 +344,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 356552419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a77c4ee1a2fd845ab9fc8061f6e9eb, type: 3}
+  m_Script: {fileID: 11500000, guid: be6c6aa69dff64c229f7917fb6e94f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterHealth: 0
-  characterSpeed: 0
-  characterSprite: {fileID: 0}
+  playerNumber: 1
 --- !u!114 &356552429
 MonoBehaviour:
   m_ObjectHideFlags: 0
