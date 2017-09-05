@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JoePunch1 : MonoBehaviour {
+public class RedPunch1 : MonoBehaviour {
 
     public bool canAttack;
-    public bool canMove;
 
     // Use this for initialization
 	void Start () {
@@ -15,17 +14,13 @@ public class JoePunch1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("p1Punch1") && canAttack == true) // Punch1 if Punch1 is pressed and we're allowed to
-        {
-
-            Punch1();
-        }
+        
     }
 
-    void Punch1()
+    public void Punch1()
     {
-	    canMove = false;
-	    GetComponentInChildren<Animator>().SetTrigger("Punch1");
+        GetComponent<MovementController>().SetCannotMove();
+	    GetComponent<Animator>().SetTrigger("Punch1");
 	    canAttack = false;
     }
 
@@ -36,8 +31,8 @@ public class JoePunch1 : MonoBehaviour {
 
     public void ActionReset()
     {
-	    canMove = true;
-	    canAttack = true;
+        GetComponent<MovementController>().SetCanMove();
+        canAttack = true;
     }
 
     public void AttackDisable()

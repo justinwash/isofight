@@ -47,8 +47,13 @@ public class MovementController : MonoBehaviour
         transform.position += upMovement; // Move our transform's position up/down
     }
 
-    public void ActionReset()
+    public void SetCanMove()
     {
         canMove = true;
+    }
+
+    public void SetCannotMove()
+    {
+        canMove = false;
     }
 }
