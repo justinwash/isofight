@@ -5,16 +5,16 @@ using UnityEngine.Experimental.UIElements;
 
 public class HealthCounter : MonoBehaviour
 {
-    
-    public int startingHealth = 100;
+
+    public int startingHealth;
     public int currentHealth;
-    public Slider healthSlider;
     bool hitbyopponent;
     public bool isDead;
 
     // Use this for initialization
     void Start()
     {
+        startingHealth = GetComponentInParent<CharacterInfoCollector>().characterHealth;
         currentHealth = startingHealth;
     }
 
@@ -32,7 +32,6 @@ public class HealthCounter : MonoBehaviour
     {
         hitbyopponent = true;
         currentHealth -= amount;
-        healthSlider.value = currentHealth;
 
     }
     

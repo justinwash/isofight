@@ -6,6 +6,7 @@ public class AbilityController : MonoBehaviour {
 
     public string characterName;
     string currentMove;
+    bool canAttack;
 
 	// Use this for initialization
 	void Start ()
@@ -17,18 +18,40 @@ public class AbilityController : MonoBehaviour {
 	void Update ()
     {
 		//check for Punch1 input
-        if(Input.GetButton(GetComponent<PlayerInfo>().punch1Key))
+        if(Input.GetButton(GetComponent<PlayerInfo>().punch1Key) && canAttack)
         {
-            currentMove = characterName + "Punch1";
-
-            GameObject.FindWithTag("Red").GetComponent<RedPunch1>().Punch1();
-
-
+            currentMove = "Punch1";
+            gameObject.BroadcastMessage("Punch1", characterName);
         }
 	}
 
     public void SetName()
     {
         characterName = GetComponent<CharacterInfoCollector>().characterName;
+    }
+
+    public void ActivateHitBox()
+    {
+        GetComponentInChildren<HitboxManager>().ActivateHitbox();
+    }
+
+	public void DeactivateHitBox()
+	{
+        GetComponentInChildren<HitboxManager>().DeactivateHitbox();
+	}
+
+    public void MoveFinished()
+    {
+        GetComponent<Animator>().ResetTrigger(currentMove);
+    }
+
+    public void SetCanAttack()
+    {
+        canAttack = true;
+    }
+
+    public void SetCannotAttack()
+    {
+        canAttack = false;
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Move Database
   - Red
+  - Blue
   layers:
   - Default
   - TransparentFX

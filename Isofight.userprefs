@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{C44EDB4E-8212-FA35-64CA-35CDA1D46744}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AbilityController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HealthCounter.cs">
     <Files>
-      <File FileName="Assets/Scripts/p2CharController.cs" Line="47" Column="1" />
-      <File FileName="Assets/Scripts/CharacterInfo.cs" Line="16" Column="3" />
-      <File FileName="Assets/Scripts/Ability.cs" Line="13" Column="2" />
-      <File FileName="Assets/Scripts/RedPunch1.cs" Line="17" Column="9" />
-      <File FileName="Assets/Scripts/CharacterInfoCollector.cs" Line="37" Column="49" />
+      <File FileName="Assets/Scripts/CharacterInfo.cs" Line="13" Column="66" />
+      <File FileName="Assets/Scripts/RedPunch1.cs" Line="12" Column="63" />
+      <File FileName="Assets/Scripts/CharacterInfoCollector.cs" Line="23" Column="46" />
       <File FileName="Assets/Scripts/MovementController.cs" Line="61" Column="61" />
-      <File FileName="Assets/Scripts/BluePunch1.cs" Line="5" Column="18" />
-      <File FileName="Assets/Scripts/AbilityController.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/BluePunch1.cs" Line="25" Column="23" />
+      <File FileName="Assets/Scripts/AbilityController.cs" Line="21" Column="79" />
+      <File FileName="Assets/Scripts/HitboxManager.cs" Line="20" Column="55" />
+      <File FileName="Assets/Scripts/HealthCounter.cs" Line="34" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

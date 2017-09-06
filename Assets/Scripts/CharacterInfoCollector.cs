@@ -12,13 +12,21 @@ public class CharacterInfoCollector : MonoBehaviour
     public int characterStocks;
     public Sprite characterSprite;
     public ArrayList characterMoves;
+    public RuntimeAnimatorController characterAnimatorController;
+    string prefabPath;
 
     // Use this for initialization
     void Start()
     {
-        character = Resources.Load(selectedCharacter) as GameObject;
+        prefabPath = "Characters/" + selectedCharacter;
+        //Load the selected character prefab from Resources
+        character = Resources.Load(prefabPath) as GameObject;
+        //Set the Tag of the character to be instantiated so we can find it later.
+        character.tag = selectedCharacter;
+        //Add the selected character prefab to the scene
+        Instantiate(character, new Vector3(0, 0, 0), Quaternion.identity, transform);
 
-        if (character == null)
+		if (character == null)
         {
             Debug.Log("No character selected"); 
         }
@@ -36,6 +44,9 @@ public class CharacterInfoCollector : MonoBehaviour
 
         //Same for the name in th ability script
         GetComponent<AbilityController>().SetName();
+
+        //Same for the Animator
+        GetComponent<Animator>().runtimeAnimatorController = character.GetComponent<CharacterInfo>().characterAnimatorController;
     }
 
     // Update is called once per frame

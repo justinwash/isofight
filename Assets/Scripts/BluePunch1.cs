@@ -21,8 +21,8 @@ public class BluePunch1 : MonoBehaviour
 
 	public void Punch1()
 	{
-		GetComponent<MovementController>().SetCannotMove();
-		GetComponent<Animator>().SetTrigger("Punch1");
+		GetComponentInParent<MovementController>().SetCannotMove();
+		GetComponentInParent<Animator>().SetTrigger("Punch1");
 		canAttack = false;
 	}
 

@@ -116,7 +116,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 303554451}
-  - component: {fileID: 303554450}
   - component: {fileID: 303554449}
   m_Layer: 0
   m_Name: Camera Target
@@ -139,22 +138,6 @@ MonoBehaviour:
   Capsule1: {fileID: 356552425}
   Capsule2: {fileID: 1458307269}
   center: {x: 244.95297, y: 65, z: 240.37898}
---- !u!114 &303554450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 303554448}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d8238cc53530b64fbb7828c3d3bb591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  damping: 0.35
-  lookAheadFactor: 0
-  lookAheadReturnSpeed: 0.5
-  lookAheadMoveThreshold: 0.1
 --- !u!4 &303554451
 Transform:
   m_ObjectHideFlags: 0
@@ -322,6 +305,7 @@ MonoBehaviour:
   characterSpeed: 0
   characterStocks: 0
   characterSprite: {fileID: 0}
+  characterAnimatorController: {fileID: 0}
 --- !u!114 &356552427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,6 +829,7 @@ GameObject:
   - component: {fileID: 1432437092}
   - component: {fileID: 1432437094}
   - component: {fileID: 1432437093}
+  - component: {fileID: 1432437095}
   m_Layer: 0
   m_Name: P2_Hitbox
   m_TagString: Untagged
@@ -888,6 +873,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1432437095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432437091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dacb0bf722d440d5aac2ee9cc1ff9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439318872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1111,7 @@ MonoBehaviour:
   characterSpeed: 0
   characterStocks: 0
   characterSprite: {fileID: 0}
+  characterAnimatorController: {fileID: 0}
 --- !u!114 &1458307271
 MonoBehaviour:
   m_ObjectHideFlags: 0

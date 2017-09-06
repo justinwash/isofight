@@ -10,6 +10,7 @@ public class CharacterInfo : MonoBehaviour
     public int characterStocks;
     public Sprite characterSprite;
     public ArrayList characterMoves;
+    public RuntimeAnimatorController characterAnimatorController;
 
 	// Use this for initialization
 	void Start () {
