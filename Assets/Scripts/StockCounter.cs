@@ -8,16 +8,16 @@ public class StockCounter : MonoBehaviour
     public int startingStocks = 6;
     int oldStockCount;
     public int newStockCount;
-    Rigidbody pleaseStop;
-    Vector3 respawnPosition;
-    Quaternion respawnRotation;
+    public Rigidbody pleaseStop;
+    public Vector3 respawnPosition;
+    public Quaternion respawnRotation;
     public bool isDead;
 
     // Use this for initialization
     void Start()
     {
-        pleaseStop = GetComponent<Rigidbody>();
-        respawnPosition = gameObject.transform.position;
+        pleaseStop = GetComponentInParent<Rigidbody>();
+        respawnPosition = gameObject.transform.parent.position;
         respawnRotation = gameObject.transform.rotation;
         oldStockCount = startingStocks;
         newStockCount = startingStocks;
@@ -41,10 +41,7 @@ public class StockCounter : MonoBehaviour
     {
         // eventually respawn the character on the stage, then set 
         // oldStockCount the same as newStockCount so FellOff()works next timme we fall off
-        pleaseStop.velocity = Vector3.zero;
-        gameObject.transform.position = respawnPosition;
-        gameObject.transform.rotation = respawnRotation;
-        oldStockCount = newStockCount;
+
     }
 
     public void FellOff()

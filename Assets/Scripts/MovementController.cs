@@ -13,7 +13,7 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
-        playerNumber = this.GetComponent<PlayerInfo>().playerNumber;
+        playerNumber = this.GetComponentInParent<PlayerInfo>().playerNumber;
 
         forward = Camera.main.transform.forward; // Set forward to equal the camera's forward vector
         forward.y = 0; // make sure y is 0
@@ -24,7 +24,7 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         // move this character if we press a movement button
-        if (Input.GetButton(GetComponent<PlayerInfo>().horizontalKey) || Input.GetButton(GetComponent<PlayerInfo>().verticalKey))
+        if (Input.GetButton(GetComponentInParent<PlayerInfo>().horizontalKey) || Input.GetButton(GetComponentInParent<PlayerInfo>().verticalKey))
         {
                 if (canMove == true)
 			{
@@ -37,9 +37,9 @@ public class MovementController : MonoBehaviour
 
     void Move()
     {
-        Vector3 direction = new Vector3(Input.GetAxis(GetComponent<PlayerInfo>().horizontalKey), 0, Input.GetAxis(GetComponent<PlayerInfo>().verticalKey)); // setup a direction Vector based on keyboard input. GetAxis returns a value between -1.0 and 1.0. If the A key is pressed, GetAxis(HorizontalKey) will return -1.0. If D is pressed, it will return 1.0
-        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis(GetComponent<PlayerInfo>().horizontalKey); // Our right movement is based on the right vector, movement speed, and our GetAxis command. We multiply by Time.deltaTime to make the movement smooth.
-        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis(GetComponent<PlayerInfo>().verticalKey); // Up movement uses the forward vector, movement speed, and the vertical axis input           
+        Vector3 direction = new Vector3(Input.GetAxis(GetComponentInParent<PlayerInfo>().horizontalKey), 0, Input.GetAxis(GetComponentInParent<PlayerInfo>().verticalKey)); // setup a direction Vector based on keyboard input. GetAxis returns a value between -1.0 and 1.0. If the A key is pressed, GetAxis(HorizontalKey) will return -1.0. If D is pressed, it will return 1.0
+        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis(GetComponentInParent<PlayerInfo>().horizontalKey); // Our right movement is based on the right vector, movement speed, and our GetAxis command. We multiply by Time.deltaTime to make the movement smooth.
+        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis(GetComponentInParent<PlayerInfo>().verticalKey); // Up movement uses the forward vector, movement speed, and the vertical axis input           
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement); // This creates our new direction. By combining our right and forward movements and normalizing them, we create a new vector that points in the appropriate direction with a length no greater than 1.0
         //transform.forward = heading; // Sets forward direction of our game object to whatever direction we're moving in
         transform.position += rightMovement; // move our transform's position right/left
@@ -58,6 +58,6 @@ public class MovementController : MonoBehaviour
 
     public void SetMovementSpeed()
     {
-        moveSpeed = this.GetComponent<CharacterInfoCollector>().characterSpeed;
+        moveSpeed = this.GetComponentInParent<CharacterInfoCollector>().characterSpeed;
     }
 }

@@ -18,7 +18,7 @@ public class AbilityController : MonoBehaviour {
 	void Update ()
     {
 		//check for Punch1 input
-        if(Input.GetButton(GetComponent<PlayerInfo>().punch1Key) && canAttack)
+        if(Input.GetButton(GetComponentInParent<PlayerInfo>().punch1Key) && canAttack)
         {
             currentMove = "Punch1";
             gameObject.BroadcastMessage("Punch1", characterName);
@@ -27,7 +27,7 @@ public class AbilityController : MonoBehaviour {
 
     public void SetName()
     {
-        characterName = GetComponent<CharacterInfoCollector>().characterName;
+        characterName = GetComponentInParent<CharacterInfoCollector>().characterName;
     }
 
     public void ActivateHitBox()

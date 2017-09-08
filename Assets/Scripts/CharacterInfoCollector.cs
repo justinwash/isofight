@@ -22,9 +22,10 @@ public class CharacterInfoCollector : MonoBehaviour
         //Load the selected character prefab from Resources
         character = Resources.Load(prefabPath) as GameObject;
         //Set the Tag of the character to be instantiated so we can find it later.
-        character.tag = selectedCharacter;
+        //character.tag = selectedCharacter;
         //Add the selected character prefab to the scene
-        Instantiate(character, new Vector3(0, 0, 0), Quaternion.identity, transform);
+        Instantiate(character, transform.position, transform.rotation, transform);
+        //character.transform.parent = gameObject.transform.parent;
 
 		if (character == null)
         {
@@ -40,13 +41,10 @@ public class CharacterInfoCollector : MonoBehaviour
         characterMoves = character.GetComponent<CharacterInfo>().characterMoves;
 
         // Set movement speed because my MovementController script is too dumb to do it alone
-        GetComponent<MovementController>().SetMovementSpeed();
+        GetComponentInChildren<MovementController>().SetMovementSpeed();
 
-        //Same for the name in th ability script
-        GetComponent<AbilityController>().SetName();
-
-        //Same for the Animator
-        GetComponent<Animator>().runtimeAnimatorController = character.GetComponent<CharacterInfo>().characterAnimatorController;
+        //Same for the name in the ability script
+        GetComponentInChildren<AbilityController>().SetName();
     }
 
     // Update is called once per frame
