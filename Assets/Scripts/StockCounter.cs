@@ -7,55 +7,51 @@ public class StockCounter : MonoBehaviour
 {
     public int startingStocks = 6;
     int oldStockCount;
-    public int newStockCount;
+    public int currentStockCount;
     public Rigidbody pleaseStop;
     public Vector3 respawnPosition;
     public Quaternion respawnRotation;
+    public GameObject character;
     public bool isDead;
 
     // Use this for initialization
     void Start()
     {
+        character = transform.parent.gameObject;
         pleaseStop = GetComponentInParent<Rigidbody>();
-        respawnPosition = gameObject.transform.parent.position;
+        respawnPosition = gameObject.transform.position;
         respawnRotation = gameObject.transform.rotation;
         oldStockCount = startingStocks;
-        newStockCount = startingStocks;
+        currentStockCount = startingStocks;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.transform.position.y <= -500 && oldStockCount == newStockCount)
+        if(gameObject.transform.position.y <= -500 && oldStockCount == currentStockCount)
         {
             FellOff();
-        }
-
-        if (gameObject.transform.position.y <= -1000 && !isDead)
-        {
             Respawn();
         }
     }
 
-    void Respawn()
-    {
-        // eventually respawn the character on the stage, then set 
-        // oldStockCount the same as newStockCount so FellOff()works next timme we fall off
-
-    }
-
     public void FellOff()
     {
-        newStockCount = oldStockCount - 1;
+        currentStockCount = oldStockCount - 1;
 
-        if (newStockCount <= 0 && !isDead)
+        if (currentStockCount <= 0 && !isDead)
         {
             // KAYYYYY OHHHHHH
             Death();
         }
 
+    }
+
+    public void Respawn()
+    {
         
     }
+
     void Death()
     {
         // Set the death flag, eventually have charlie yell something dumb about Cammy
