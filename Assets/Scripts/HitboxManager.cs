@@ -19,7 +19,8 @@ public class HitboxManager : MonoBehaviour
             hitboxActive = false;
             Debug.Log(col.gameObject.name + " hit !");
             col.gameObject.transform.parent.BroadcastMessage("TakeDamage", 10);
-           
+            col.gameObject.transform.parent.BroadcastMessage("AddSuperPoints", 1);
+            GetComponentInParent<SuperCounter>().AddSuperPoints(2);
         }
 	}
 

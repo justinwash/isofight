@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SuperCounter : MonoBehaviour {
 
+    public int superPoints;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +15,9 @@ public class SuperCounter : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void AddSuperPoints(int amount)
+    {
+        superPoints += amount;
+    }
 }

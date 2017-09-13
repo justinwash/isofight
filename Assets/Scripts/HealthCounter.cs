@@ -8,14 +8,20 @@ public class HealthCounter : MonoBehaviour
 
     public int startingHealth;
     public int currentHealth;
-    bool hitbyopponent;
     public bool isDead;
+    public bool isRespawning;
 
     // Use this for initialization
     void Start()
     {
         startingHealth = GetComponentInParent<CharacterInfoCollector>().characterHealth;
-        currentHealth = startingHealth;
+
+        if (!isRespawning)
+        {
+            currentHealth = startingHealth;
+        }
+
+        isRespawning = false;
     }
 
     // Update is called once per frame
@@ -30,7 +36,6 @@ public class HealthCounter : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        hitbyopponent = true;
         currentHealth -= amount;
 
     }

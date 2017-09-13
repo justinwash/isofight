@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class RoundTimer : MonoBehaviour {
 
     static float timer;
-    public bool roundOver;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +19,7 @@ public class RoundTimer : MonoBehaviour {
             timer -= Time.deltaTime;
             GetComponent<Text>().text = timer.ToString("0");
         }
-        else roundOver = true;
+        else GetComponent<Text>().text = "ROUND OVER";
+
 	}
 }

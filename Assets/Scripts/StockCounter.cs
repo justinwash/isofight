@@ -5,29 +5,48 @@ using UnityEngine.Experimental.UIElements;
 
 public class StockCounter : MonoBehaviour
 {
-    public int startingStocks = 6;
-    int oldStockCount;
+    public int startingStocks;
+    [HideInInspector]
+    public int oldStockCount;
     public int currentStockCount;
-    public Vector3 respawnPosition;
-    public Quaternion respawnRotation;
-    public GameObject character;
+    GameObject character;
     public bool isDead;
-    public Transform respawnParent;
-    public float respawnTimer;
-    public int respawnTime = 3;
-    GameObject respawnedCharacter;
+    Transform respawnParent;
+    float respawnTimer;
+    int respawnTime = 2;
+    string selectedCharacter;
+    int playerNumber;
+    string objectName;
+    public bool isRespawning;
+
 
     bool fellOff;
 
     // Use this for initialization
     void Start()
     {
+        startingStocks = GetComponentInParent<CharacterInfoCollector>().characterStocks;
+
+        // Change the name of this object so it doesn't end up with "(clone)" after it when we respawn
+        // Was going to use this to find instantiated respawns but I found a beter way to do that.
+        selectedCharacter = transform.parent.GetComponentInParent<CharacterInfoCollector>().selectedCharacter;
+        playerNumber = transform.parent.GetComponentInParent<PlayerInfo>().playerNumber;
+        objectName = selectedCharacter + playerNumber;
+        transform.parent.gameObject.name = objectName;
+
+        //Set the selected character as the thing we're gonna make a bunch of (when we fall off)
         character = transform.parent.gameObject;
-        respawnPosition = transform.position;
-        respawnRotation = transform.rotation;
+
+        // Tell the thing where it should respawn
         respawnParent = transform.parent.transform.parent;
-        oldStockCount = startingStocks;
-        currentStockCount = startingStocks;
+
+        if (!isRespawning)
+        {
+            oldStockCount = startingStocks;
+            currentStockCount = startingStocks;
+        }
+
+        isRespawning = false;
     }
 
     // Update is called once per frame
@@ -51,7 +70,6 @@ public class StockCounter : MonoBehaviour
     {
         fellOff = true;
         currentStockCount = oldStockCount - 1;
-        transform.parent.GetComponentInParent<CharacterInfoCollector>().characterStocks = currentStockCount;
 
         if (currentStockCount <= 0 && !isDead)
         {
@@ -63,25 +81,29 @@ public class StockCounter : MonoBehaviour
 
     void Respawn()
     {
-        if (fellOff)
+        if (fellOff && !isDead)
         {
             // Remove the character from the Player gameobject and fix its scale
             transform.parent.transform.parent = null;
             character.transform.localScale = new Vector3(1, 1, 1);
 
-            // Make a new player object and destroy the one that fell off screen
-            respawnedCharacter = Instantiate(character, respawnParent.position, respawnParent.rotation, respawnParent);
+            // Tell the new instance how many lives and health it has, then create it
+            character.GetComponentInChildren<StockCounter>().currentStockCount = currentStockCount;
+            character.GetComponentInChildren<StockCounter>().oldStockCount = currentStockCount;
+            character.GetComponentInChildren<StockCounter>().isRespawning = true;
+            character.GetComponentInChildren<HealthCounter>().isRespawning = true;
+            character.GetComponentInChildren<HealthCounter>().currentHealth = GetComponent<HealthCounter>().currentHealth;
+            Instantiate(character, respawnParent.position, respawnParent.rotation, respawnParent);
 
+            // Trash the old trash that fell off the stage in the first place
             Destroy(transform.parent.gameObject);
-
-            fellOff = false;;
         }
     }
 
 
     void Death()
     {
-        // Set the death flag, eventually have charlie yell something dumb about Cammy
+        // Set the death flag, have charlie yell something dumb about Cammy
         isDead = true;
     }
 }

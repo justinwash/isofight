@@ -287,7 +287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 99
+  m_Text: TIMER
 --- !u!222 &508839083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424d110a0121640cf9eb106a8916cbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundOver: 0
 --- !u!1 &744711497
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +315,7 @@ GameObject:
   - component: {fileID: 744711498}
   - component: {fileID: 744711500}
   - component: {fileID: 744711499}
+  - component: {fileID: 744711501}
   m_Layer: 5
   m_Name: P1_Super
   m_TagString: Untagged
@@ -373,13 +373,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 1 Super: 0'
+  m_Text: 'Player 1 Super:'
 --- !u!222 &744711500
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 744711497}
+--- !u!114 &744711501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 744711497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2747420def046e289d3c20da9e0b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1109552347
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +490,7 @@ GameObject:
   - component: {fileID: 1116385817}
   - component: {fileID: 1116385819}
   - component: {fileID: 1116385818}
+  - component: {fileID: 1116385820}
   m_Layer: 5
   m_Name: P2_Super
   m_TagString: Untagged
@@ -536,13 +548,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 1 Super: 0'
+  m_Text: 'Player 1 Super:'
 --- !u!222 &1116385819
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1116385816}
+--- !u!114 &1116385820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1116385816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72c74ae8bfb14a3bb952a8bf49cb19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1302643785
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +676,7 @@ GameObject:
   - component: {fileID: 1439318873}
   - component: {fileID: 1439318875}
   - component: {fileID: 1439318874}
+  - component: {fileID: 1439318876}
   m_Layer: 5
   m_Name: P2_Stock
   m_TagString: Untagged
@@ -675,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 840.18, y: 397.39}
+  m_AnchoredPosition: {x: 816, y: 397.39}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1439318874
@@ -710,13 +734,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 2 Stock: 6'
+  m_Text: 'Player 2 Stocks:'
 --- !u!222 &1439318875
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439318872}
+--- !u!114 &1439318876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1439318872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafd812a8f6b646d09079dd1e605ec70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1458307263
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +829,7 @@ GameObject:
   - component: {fileID: 1647586171}
   - component: {fileID: 1647586173}
   - component: {fileID: 1647586172}
+  - component: {fileID: 1647586174}
   m_Layer: 5
   m_Name: P1_Health
   m_TagString: Untagged
@@ -851,13 +887,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 1 Health: 100'
+  m_Text: 'Player 1 Health:'
 --- !u!222 &1647586173
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1647586170}
+--- !u!114 &1647586174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647586170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e99cf8c05d248e6bcbfd2f44d2436b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700514338
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +994,7 @@ GameObject:
   - component: {fileID: 1770466382}
   - component: {fileID: 1770466384}
   - component: {fileID: 1770466383}
+  - component: {fileID: 1770466385}
   m_Layer: 5
   m_Name: P1_Stock
   m_TagString: Untagged
@@ -985,7 +1033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1004,13 +1052,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 1 Stock: 6'
+  m_Text: 'Player 1 Stocks:'
 --- !u!222 &1770466384
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1770466381}
+--- !u!114 &1770466385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1770466381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80dd37b1aa674047b7b124609f075d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1954379224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1151,7 @@ GameObject:
   - component: {fileID: 1975082408}
   - component: {fileID: 1975082410}
   - component: {fileID: 1975082409}
+  - component: {fileID: 1975082411}
   m_Layer: 5
   m_Name: P2_Health
   m_TagString: Untagged
@@ -1149,10 +1209,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 2 Health: 100'
+  m_Text: 'Player 2 Health:'
 --- !u!222 &1975082410
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1975082407}
+--- !u!114 &1975082411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975082407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f9fb315d2ab467aba2611200328135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
