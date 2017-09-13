@@ -8,19 +8,24 @@ public class StockCounter : MonoBehaviour
     public int startingStocks = 6;
     int oldStockCount;
     public int currentStockCount;
-    public Rigidbody pleaseStop;
     public Vector3 respawnPosition;
     public Quaternion respawnRotation;
     public GameObject character;
     public bool isDead;
+    public Transform respawnParent;
+    public float respawnTimer;
+    public int respawnTime = 3;
+    GameObject respawnedCharacter;
+
+    bool fellOff;
 
     // Use this for initialization
     void Start()
     {
         character = transform.parent.gameObject;
-        pleaseStop = GetComponentInParent<Rigidbody>();
-        respawnPosition = gameObject.transform.position;
-        respawnRotation = gameObject.transform.rotation;
+        respawnPosition = transform.position;
+        respawnRotation = transform.rotation;
+        respawnParent = transform.parent.transform.parent;
         oldStockCount = startingStocks;
         currentStockCount = startingStocks;
     }
@@ -28,16 +33,25 @@ public class StockCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.transform.position.y <= -500 && oldStockCount == currentStockCount)
+        respawnTimer += Time.deltaTime;
+        if (gameObject.transform.position.y <= -500 && oldStockCount == currentStockCount)
         {
             FellOff();
+            respawnTimer = 0;
+        }
+
+        if (respawnTimer > respawnTime && fellOff)
+        {
             Respawn();
+            respawnTimer = 0;
         }
     }
 
-    public void FellOff()
+    void FellOff()
     {
+        fellOff = true;
         currentStockCount = oldStockCount - 1;
+        transform.parent.GetComponentInParent<CharacterInfoCollector>().characterStocks = currentStockCount;
 
         if (currentStockCount <= 0 && !isDead)
         {
@@ -47,10 +61,23 @@ public class StockCounter : MonoBehaviour
 
     }
 
-    public void Respawn()
+    void Respawn()
     {
-        
+        if (fellOff)
+        {
+            // Remove the character from the Player gameobject and fix its scale
+            transform.parent.transform.parent = null;
+            character.transform.localScale = new Vector3(1, 1, 1);
+
+            // Make a new player object and destroy the one that fell off screen
+            respawnedCharacter = Instantiate(character, respawnParent.position, respawnParent.rotation, respawnParent);
+
+            Destroy(transform.parent.gameObject);
+
+            fellOff = false;;
+        }
     }
+
 
     void Death()
     {
