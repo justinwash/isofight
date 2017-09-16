@@ -14,7 +14,10 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         playerNumber = this.GetComponentInParent<PlayerInfo>().playerNumber;
-
+        if (playerNumber == 2)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
         forward = Camera.main.transform.forward; // Set forward to equal the camera's forward vector
         forward.y = 0; // make sure y is 0
         forward = Vector3.Normalize(forward); // make sure the length of vector is set to a max of 1.0

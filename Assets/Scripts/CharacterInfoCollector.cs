@@ -18,7 +18,13 @@ public class CharacterInfoCollector : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		//Set the prefab path so we know where to look for character prefabs
+        if (GetComponent<PlayerInfo>().playerNumber == 1)
+            selectedCharacter = GameState.Instance.GetP1Character();
+        
+        if (GetComponent<PlayerInfo>().playerNumber == 2)
+            selectedCharacter = GameState.Instance.GetP2Character();
+
+        //Set the prefab path so we know where to look for character prefabs
         prefabPath = "Characters/" + selectedCharacter;
         //Load the selected character prefab from Resources
 		character = Resources.Load(prefabPath) as GameObject;
