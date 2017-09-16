@@ -119,22 +119,23 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\P1HealthDisplay.cs" />
-    <Compile Include="Assets\P1StockDisplay.cs" />
-    <Compile Include="Assets\P1SuperDisplay.cs" />
-    <Compile Include="Assets\P2HealthDisplay.cs" />
-    <Compile Include="Assets\P2StockDisplay.cs" />
-    <Compile Include="Assets\P2SuperDisplay.cs" />
-    <Compile Include="Assets\RoundTimer.cs" />
     <Compile Include="Assets\Scripts\AbilityController.cs" />
     <Compile Include="Assets\Scripts\BluePunch1.cs" />
     <Compile Include="Assets\Scripts\CharacterInfo.cs" />
     <Compile Include="Assets\Scripts\CharacterInfoCollector.cs" />
+    <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\HealthCounter.cs" />
     <Compile Include="Assets\Scripts\HitboxManager.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
+    <Compile Include="Assets\Scripts\P1HealthDisplay.cs" />
+    <Compile Include="Assets\Scripts\P1StockDisplay.cs" />
+    <Compile Include="Assets\Scripts\P1SuperDisplay.cs" />
+    <Compile Include="Assets\Scripts\P2HealthDisplay.cs" />
+    <Compile Include="Assets\Scripts\P2StockDisplay.cs" />
+    <Compile Include="Assets\Scripts\P2SuperDisplay.cs" />
     <Compile Include="Assets\Scripts\PlayerInfo.cs" />
     <Compile Include="Assets\Scripts\RedPunch1.cs" />
+    <Compile Include="Assets\Scripts\RoundTimer.cs" />
     <Compile Include="Assets\Scripts\SmoothCamera.cs" />
     <Compile Include="Assets\Scripts\StockCounter.cs" />
     <Compile Include="Assets\Scripts\SuperCounter.cs" />

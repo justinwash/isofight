@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{C44EDB4E-8212-FA35-64CA-35CDA1D46744}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/P2SuperDisplay.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameStart.cs">
     <Files>
       <File FileName="Assets/Scripts/CharacterInfo.cs" Line="16" Column="17" />
       <File FileName="Assets/Scripts/RedPunch1.cs" Line="14" Column="1" />
@@ -9,16 +9,11 @@
       <File FileName="Assets/Scripts/AbilityController.cs" Line="40" Column="31" />
       <File FileName="Assets/Scripts/HitboxManager.cs" Line="22" Column="13" />
       <File FileName="Assets/Scripts/HealthCounter.cs" Line="16" Column="6" />
-      <File FileName="Assets/RoundTimer.cs" Line="20" Column="13" />
       <File FileName="Assets/Scripts/StockCounter.cs" Line="93" Column="82" />
       <File FileName="Assets/Scripts/PlayerInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets/P1StockDisplay.cs" Line="1" Column="1" />
-      <File FileName="Assets/P2StockDisplay.cs" Line="23" Column="2" />
-      <File FileName="Assets/P1HealthDisplay.cs" Line="1" Column="1" />
-      <File FileName="Assets/P2HealthDisplay.cs" Line="21" Column="46" />
       <File FileName="Assets/Scripts/SuperCounter.cs" Line="21" Column="31" />
-      <File FileName="Assets/P1SuperDisplay.cs" Line="1" Column="1" />
-      <File FileName="Assets/P2SuperDisplay.cs" Line="6" Column="16" />
+      <File FileName="Assets/Scripts/RoundTimer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameStart.cs" Line="20" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
