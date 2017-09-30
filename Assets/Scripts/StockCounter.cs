@@ -18,6 +18,7 @@ public class StockCounter : MonoBehaviour
     int playerNumber;
     string objectName;
     public bool isRespawning;
+    
 
 
     bool fellOff;
@@ -103,7 +104,9 @@ public class StockCounter : MonoBehaviour
 
     void Death()
     {
-        // Set the death flag, have charlie yell something dumb about Cammy
         isDead = true;
+        GameState.Instance.ActivateWinScreen(playerNumber);
+
+        
     }
 }

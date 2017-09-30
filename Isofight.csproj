@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\BluePunch1.cs" />
     <Compile Include="Assets\Scripts\CharacterInfo.cs" />
     <Compile Include="Assets\Scripts\CharacterInfoCollector.cs" />
+    <Compile Include="Assets\Scripts\CharacterSelect.cs" />
     <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\GameState.cs" />
     <Compile Include="Assets\Scripts\HealthCounter.cs" />

@@ -29,7 +29,7 @@ public class HealthCounter : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            // KAYYYYY OHHHHHH
+            
             isDead = true;
         }
     }
