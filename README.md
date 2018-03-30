@@ -1,2 +1,2 @@
 # Isofight
-Don't get dick-punched and fall off.  DGDPAFO.
+Don't get punched and fall off.  DGPAFO.
